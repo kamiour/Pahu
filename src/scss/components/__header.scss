@@ -1,0 +1,56 @@
+.header{
+  margin: 0;
+  color: $color-reverse;
+  height: 100%;
+
+  &-layout {
+    @include flex(space-between, center);
+    flex-wrap: wrap;
+  }
+  
+  &-center {
+    @include flex(center, center);
+  }
+  
+  &-right {
+    @include flex(flex-end, stretch);
+    @include spacing(6px);
+  }
+
+  &-button {
+
+    .header-icon {
+      margin: 0;
+      @include flex(center, center);
+      height: 100%;
+
+      .img {
+        max-height: 16px;
+        max-width: 22px;
+        object-fit: contain;
+        transition-duration: 0.2s;
+      }
+    }
+
+    &:hover .img {
+      transform: scale(1.3);
+    }
+  }
+
+  .logo {
+    @include flex(center, center);
+
+    &-name-wrap {
+      margin: 0;
+      padding: 0;
+      max-width: 140px;
+      @include flex(left, center);
+    }
+  }
+
+  .burger-icon {
+    @include flex(center, center);
+    @include wrap(37px, 37px, 0, 0);
+  }
+}
+

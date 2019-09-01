@@ -1,0 +1,120 @@
+.hero {
+
+  &-wrap {
+    position: relative;
+    margin: 0 auto;
+    padding: 100px 0;
+    height: 100%;
+
+    @media screen and (min-width: 640px) {
+      & {
+        padding: 120px 0;
+      }
+    }
+
+    .container {
+      height: 100%;
+    }
+  }
+
+  .logo-style {
+    color: $color-secondary;
+  }
+
+  &-layout {
+    height: 100%;
+    @include flex(center, center);
+    flex-direction: column;
+  }
+
+  &-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -3;
+    margin: 0;
+  }
+
+  &-overlay {
+    @include overlay(-2, $color-overlay, 0.6);
+  }
+
+  &-overlay-pic {
+    display: none;
+    @include overlay(-1, transparent, 1);
+    margin: 0;
+
+    @media screen and (min-width: 640px) {
+      display: block;
+    }
+  }
+
+  &-textarea {
+    @include flex(center, center);
+    flex-direction: column;
+    text-align: center;
+    color: $color-main;
+
+    .hero-title {
+      @include font(28px, 600, 38px);
+      margin-top: 0;
+      color: $color-reverse;
+      text-transform: uppercase;
+
+      @media screen and (min-width: 480px) {
+        & {
+          @include font(28px, 300, 38px);
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        & {
+          @include font(34px, 300, 44px);
+        }
+      }
+    }
+    
+    .hero-description {
+      @include font(14px, 400, 18px);
+      color: $color-reverse;
+      margin-top: 0;
+      margin-bottom: 35px;
+      max-width: 450px;
+      text-transform: capitalize;
+
+      &:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+        width: 30px;
+        height: 2px;
+        background-color: $color-secondary;
+        margin-right: 5px;
+
+        @media screen and (min-width: 960px) {
+          & {
+            width: 63px;
+            height: 5px;
+            margin-right: 20px;
+          }
+        }
+      }
+
+      @media screen and (min-width: 480px) {
+        & {
+          @include font(15px, 400, 24px);
+          margin-bottom: 40px;
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        & {
+          @include font(18px, 400, 28px);
+          margin-bottom: 45px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  margin: 0 auto;
+  color: $color-main;
+  font-family: $f-family-main;
+  @include font($f-size-main, $f-weight-main, $f-lheight-main);
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+body {  
+  margin: 0;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  .section-top .card-features & {
+    height: 100%;
+    width: auto;
+  }
+
+  &.img-right {
+    object-position: center;
+
+    @media screen and (min-width: 640px) {
+      object-position: right;
+    }
+  }
+
+  &.img-left {
+    width: 120%;
+    height: 120%;
+    object-position: left;
+
+    @media screen and (min-width: 640px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  &.img-down {
+    object-position: bottom;
+  }
+}
+
+.invisible {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.67em 0;
+}
+
+* + h1, * + h2, * + h3,* + h4,* + h5,* + h6 {
+  margin: 0.67em 0 0 0;
+}
+
+p, ul, ol, figure {
+  margin: 0 0 15px 0;
+}
+
+div > p {
+  margin-bottom: 0;
+}
+
+* + p, * + ul, * + ol, * + figure{
+  margin-top: 15px;
+}
+
+ul {
+  padding: 0 0 0 40px;
+  margin: 0;
+}
+
+ul > li > ol,
+ul > li > ul,
+ol > li > ul,
+ol > li > ol {
+  margin: 0;
+}
+

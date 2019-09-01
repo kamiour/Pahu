@@ -1,0 +1,84 @@
+.header-navigation {
+  @include flex(center, center);
+  display: none;
+  text-transform: uppercase;
+  @include spacing (10px);
+
+  @media screen and (min-width: 640px) {
+    & {
+      display: flex;
+    }
+  }
+}
+
+.nav-wrap {
+  @include flex(center, center);
+}
+  
+.nav-item {
+  color: $color-reverse;
+  @include font(12px, 600, 1);
+  padding: 25px 0;
+  text-decoration: none;
+  text-align: center;
+  border: 3px solid transparent;
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &.isactive {
+    border-bottom: 3px solid $color-secondary;
+
+    &:hover {
+      color: $color-reverse;
+    }
+  }
+}
+
+.nav-mobile {
+  position: relative;
+
+  @media screen and (min-width: 640px) {
+    & {
+      display: none;
+    }
+  }
+  
+  ul {
+    @include wrap(115px, auto, 8px, 5px);
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, 0);
+    background-color: $color-secondary;
+
+    &.is-open {
+      display: block;
+    }
+
+    li{
+      padding: 0;
+    }
+  }
+}
+
+.nav-item-mob{
+  display: block;
+  @include font(12px, 600, 0.9);
+  letter-spacing: 1px;
+  color: $color-reverse;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover{
+    background-color: $color-reverse;
+    color: $color-main;
+    text-decoration: none;
+  }
+}

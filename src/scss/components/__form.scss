@@ -1,0 +1,48 @@
+.form {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+
+  &-layout {
+    @include flex(center, center);
+    flex-wrap: wrap;
+  }
+  
+  &-input {
+    position: relative;
+  }
+
+  &-style {
+    width: 100%;
+    border: 1px solid $color-additional-light;
+    color: $color-additional-light;
+    background-color: transparent;
+    @include font(12px, 400, 16px);
+    outline: none;
+    margin: 0;
+    padding: 10px;
+
+    @media screen and (min-width: 640px) {
+      & {
+        padding: 15px;
+      }
+    }
+  
+    &::placeholder {
+      color: $color-additional-light;
+    }
+  }
+
+  .flip-icon ~ .form-style {
+    padding-right: 66px;
+  }
+
+  .form-icon {
+    color: $color-additional-light;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  } 
+}

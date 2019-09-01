@@ -1,0 +1,88 @@
+.button {
+  @include flex(center, center);
+  @include button($color-main, $color-secondary, 15px, 20px, none, 0, uppercase);
+  @include font(14px, 600, 1);
+  border: none;
+  outline: none;
+  transition-duration: 0.3s;
+
+  &:hover {
+    @include button($color-main, darken($color-secondary, 10%), 15px, 20px, none, 0, uppercase);
+  }
+
+  &-wrap {
+    @include flex(left, center);
+    margin-top: 4px;
+    @media screen and (min-width: 480px) {   
+      & {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-expand {
+    margin-top: 20px;
+  }
+
+  &-icon {
+    @include flex(center, center);
+    @include wrap(35px, 35px, 0, 0);
+    margin: 0;
+
+    &:hover {
+      .img {
+        transition-duration: 0.5s;
+        width: 120%;
+        height: 120%;
+      }
+    }
+
+    &.bounce {
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+
+.burger-button {
+  @include flex(center, center);
+  @include wrap(48px, 48px, 10px, 50%);
+  background-color: $color-secondary;
+  transition-duration: 0.5s;
+  margin: 15px 0;
+
+  &:hover {
+    background-color: darken($color-secondary, 10%);
+
+    .img {
+      transition-duration: 0.2s;
+      width: 120%;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    & {
+      @include wrap(58px, 58px, 10px, 50%);
+    }
+  }
+}
+
+.rotate {
+  transition-duration: 1s;
+  transform: rotate(180deg);
+}
+
+.arrow {
+  margin-left: 10px;
+}

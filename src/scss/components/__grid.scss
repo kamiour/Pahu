@@ -1,0 +1,32 @@
+.grid {
+  @include flex(center, stretch);
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 480px) {
+    & {
+      @include spacing(5px);
+    }
+
+    .section-features.section-bottom & {
+      @include spacing(0);
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .col-reverse-vert & {
+      flex-direction: column-reverse;
+    }
+    
+    .col-reverse-horiz & {
+      flex-direction: row-reverse;
+    }
+    
+    .section-collections & {
+      @include spacing(10px);
+    }
+
+    .footer & {
+      @include spacing(30px);
+    }
+  }
+}
