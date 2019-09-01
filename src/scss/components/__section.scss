@@ -4,9 +4,16 @@
   position: relative;
   background-color: $color-bg-blue;
 
-  &-left, &-right, &-centre {
-    @include flex(center, center);
-    flex-wrap: wrap;
+  @media screen and (min-width: 480px) {
+    padding: 60px 0;
+  }
+
+  @media screen and (min-width: 640px) {
+    padding: 75px 0;
+  }
+
+  @media screen and (min-width: 960px) {
+    padding: 90px 0;
   }
 
   &-reverse {
@@ -70,17 +77,20 @@
     @include overlay(-2, $color-overlay, 0.6);
   }
 
-  @media screen and (min-width: 640px) {
-    padding: 55px 0;
-  }
-
-  @media screen and (min-width: 960px) {
-    padding: 70px 0;
-  }
-
   &-layout {
     @include flex(center, center);
     flex-wrap: wrap;
+  }
+
+  &-left, &-right, &-centre {
+    @include flex(center, center);
+    flex-wrap: wrap;
+  }
+
+  & &-left, & &-right {
+    @media screen and (min-width: 480px) {
+      @include spacing(8px);
+    }
   }
 
   &-media {
@@ -88,6 +98,7 @@
     margin: 0;
     margin-bottom: 25px;
     margin-top: 10px;
+    max-width: 300px;
   }
 
   &-header {
@@ -97,6 +108,18 @@
     flex-direction: column;
     margin: 0 auto;
     margin-bottom: 35px;
+
+    @media screen and (min-width: 480px) {
+      margin-bottom: 50px;
+    }
+  
+    @media screen and (min-width: 640px) {
+      padding: 70px 0;
+    }
+  
+    @media screen and (min-width: 960px) {
+      padding: 100px 0;
+    }
   }
   
   &-title {
@@ -108,6 +131,12 @@
     padding: 0 20px;
     margin: 0;
 
+    @media screen and (min-width: 480px) {
+      & {
+        @include font(22px, 700, 30px);
+      }
+    }
+
     @media screen and (min-width: 640px) {
       & {
         @include font(26px, 700, 38px);
@@ -115,51 +144,18 @@
       }
     }
 
+    @media screen and (min-width: 960px) {
+      & {
+        @include font(40px, 700, 60px);
+      }
+    }
+
     .section-reverse & {
       color: $color-secondary;
     }
 
-    @media screen and (min-width: 640px) {
-      & {
-        @include font(26px, 700, 38px);
-        margin-bottom: 20px;
-      }
-    }
-
-    @media screen and (min-width: 960px) {
-      & {
-        @include font(28px, 700, 40px);
-        margin-bottom: 22px;
-      }
-    }
-
     &.title-reverse {
       color: $color-reverse;
-    }
-  }
-  
-  &-subtitle {
-    color: $color-secondary;
-    @include font(13px, 500, 20px);
-    margin:0 auto;
-    margin-top: 0;
-    margin-bottom: 40px;
-    max-width: 800px;
-    text-align: center;
-    text-transform: uppercase;
-
-    @media screen and (min-width: 640px) {
-      & {
-        @include font(15px, 500, 24px);
-        margin-bottom: 50px;
-      }
-    }
-
-    @media screen and (min-width: 960px) {
-      & {
-        @include font(17px, 500, 28px);
-        margin-bottom: 60px;
-      }
     }
   }
 
@@ -183,39 +179,6 @@
         margin: 20px 0;
       }
     }
-  }
-
-  &-clients {
-    .list-clients {
-      @include flex(space-around, center);
-      list-style-type: none;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      @include spacing(12px);
-
-      & li {
-      @include flex(center, center);
-      margin-bottom: 24px;
-      }
-    }  
-  }
-}
-
-.col {
-  margin: 0;
-  min-height: 1px;
-
-  .section-collections & {
-    margin-bottom: 20px;
-  }
-
-  .section-designers & {
-    margin-bottom: 20px;
-  }
-
-  .section-blog & {
-    margin-bottom: 45px;
   }
 }
 
@@ -241,4 +204,21 @@
 
 .bg-dark {
   background-color: $color-bg-dark;
+}
+
+.col {
+  margin: 0;
+  min-height: 1px;
+
+  .section-collections & {
+    margin-bottom: 20px;
+  }
+
+  .section-designers & {
+    margin-bottom: 20px;
+  }
+
+  .section-blog & {
+    margin-bottom: 45px;
+  }
 }

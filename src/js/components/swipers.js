@@ -26,6 +26,9 @@ slidesPerView: 2,
 spaceBetween: 0,
 breakpointsInverse: true,
       breakpoints: {
+      480: {
+        slidesPerView: 3,
+      },
       640: {
         slidesPerView: 4,
       },

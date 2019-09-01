@@ -1,24 +1,31 @@
 .hero {
-
   &-wrap {
     position: relative;
     margin: 0 auto;
     padding: 100px 0;
     height: 100%;
 
+    @media screen and (min-width: 480px) {
+      & {
+        padding: 80px 0;
+      }
+    }
+
     @media screen and (min-width: 640px) {
       & {
-        padding: 120px 0;
+        padding: 150px 0;
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      & {
+        padding: 340px 0;
       }
     }
 
     .container {
       height: 100%;
     }
-  }
-
-  .logo-style {
-    color: $color-secondary;
   }
 
   &-layout {
@@ -65,13 +72,19 @@
 
       @media screen and (min-width: 480px) {
         & {
-          @include font(28px, 300, 38px);
+          @include font(32px, 300, 42px);
+        }
+      }
+
+      @media screen and (min-width: 640px) {
+        & {
+          @include font(40px, 300, 60px);
         }
       }
 
       @media screen and (min-width: 960px) {
         & {
-          @include font(34px, 300, 44px);
+          @include font(60px, 300, 80px);
         }
       }
     }
@@ -83,6 +96,27 @@
       margin-bottom: 35px;
       max-width: 450px;
       text-transform: capitalize;
+
+      @media screen and (min-width: 480px) {
+        & {
+          @include font(15px, 400, 24px);
+          margin-bottom: 40px;
+        }
+      }
+
+      @media screen and (min-width: 640px) {
+        & {
+          @include font(18px, 400, 28px);
+          margin-bottom: 45px;
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        & {
+          @include font(25px, 400, 35px);
+          margin-bottom: 55px;
+        }
+      }
 
       &:before {
         display: inline-block;
@@ -102,18 +136,8 @@
         }
       }
 
-      @media screen and (min-width: 480px) {
-        & {
-          @include font(15px, 400, 24px);
-          margin-bottom: 40px;
-        }
-      }
-
-      @media screen and (min-width: 960px) {
-        & {
-          @include font(18px, 400, 28px);
-          margin-bottom: 45px;
-        }
+      .logo-style {
+        color: $color-secondary;
       }
     }
   }
