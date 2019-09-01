@@ -2,12 +2,16 @@
   @include flex(center, center);
   display: none;
   text-transform: uppercase;
-  @include spacing (10px);
+  @include spacing (8px);
 
   @media screen and (min-width: 640px) {
     & {
       display: flex;
     }
+  }
+
+  @media screen and (min-width: 960px) {
+    @include spacing (15px);
   }
 }
 
@@ -22,6 +26,11 @@
   text-decoration: none;
   text-align: center;
   border: 3px solid transparent;
+
+  @media screen and (min-width: 960px) {
+    @include font(14px, 600, 1);
+    padding: 35px 0;
+  }
 
   &:hover {
     color: $color-secondary;

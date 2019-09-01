@@ -12,6 +12,10 @@
     background-color: $color-reverse;
     transition-duration: 0.2s;
 
+    @media screen and (min-width: 960px) {
+      padding: 25px;
+    }
+
     &:hover {
       box-shadow: 0 0 38px rgba(190, 176, 150, 0.73);
       transform: scale(1.05);
@@ -33,10 +37,29 @@
     @media screen and (min-width: 640px) {
       flex-direction: row;
     }
+
+    @media screen and (min-width: 960px) {
+      height: auto;
+      @include spacing(12px);
+      margin-bottom: 65px;
+
+      .section-left & {
+        flex-direction: row-reverse;
+      }
+    }
   }
 
   &-features-bottom {
     height: auto;
+  }
+
+  &-blog {
+    background-color: $color-reverse;
+    padding-bottom: 15px;
+
+    @media screen and (min-width: 960px) {
+      padding-bottom: 25px;
+    }
   }
 
   &-header {
@@ -71,6 +94,11 @@
 
     .card-blog & {
       padding: 15px 10px;
+
+      @media screen and (min-width: 960px) {
+        padding: 40px 25px;
+        padding-bottom: 22px;
+      }
     }
   }
 
@@ -102,6 +130,11 @@
         padding-top: 18px;
       }
 
+      @media screen and (min-width: 960px) {
+        padding-left: 50px;
+        padding-top: 45px;
+      }
+
       & > * {
         width: 100%;
       }
@@ -110,6 +143,11 @@
     @media screen and (min-width: 480px) {
       padding-left: 20px;
       padding-top: 18px;
+    }
+
+    @media screen and (min-width: 480px) {
+      padding-left: 48px;
+      padding-top: 52px;
     }
   }
   
@@ -126,14 +164,24 @@
     left: 0;
     margin: 0;
 
+    @media screen and (min-width: 960px) {
+      width: 56px;
+    }
+
     &-text {
       color: $color-reverse;
-      @include font(12px, 600, 1);
+      @include font(12px, 400, 1);
       text-transform: uppercase;
       transform: rotate(-45deg);
       margin: 0;
       margin-top: 6px;
       margin-left: 3px;
+
+      @media screen and (min-width: 960px) {
+        @include font(12px, 400, 1);
+        margin-top: 9px;
+        margin-left: 5px;
+      }
     }
   }
 
@@ -201,7 +249,12 @@
       }
 
       @media screen and (min-width: 960px) {
-        margin-bottom: 26px;
+        margin-bottom: 22px;
+        @include font(20px, 600, 28px);
+
+        .section-left & {
+          text-align: right;
+        }
       }
     }
 
@@ -218,9 +271,16 @@
       }
 
       @media screen and (min-width: 640px) {
-        max-width: 15vw;
+        @include font(12px, 600, 18px);
+        max-width: 20vw;
         letter-spacing: 3px;
-        margin-bottom: 22px;
+        margin-bottom: 16px;
+      }
+
+      @media screen and (min-width: 960px) {
+        @include font(30px, 600, 40px);
+        max-width: 220px;
+        margin-bottom: 38px;
       }
     }
 
@@ -232,12 +292,22 @@
       @media screen and (min-width: 640px) {
         margin-bottom: 20px;
       }
+
+      @media screen and (min-width: 960px) {
+        margin-bottom: 20px;
+        @include font(20px, 600, 1);
+      }
     }
 
     .card-designers & {
       text-transform: none;
       @include flex(flex-start, center);
       margin-top: 12px;
+
+      @media screen and (min-width: 960px) {
+        @include font(30px, 600, 1);
+        margin-top: 28px;
+      }
 
       &:after {
         display: inline-block;
@@ -261,11 +331,19 @@
     .card-projects & {
       text-align: left;
       flex-grow: 1;
+
+      @media screen and (min-width: 960px) {
+        @include font(30px, 600, 40px);
+      }
     }
 
     .card-blog & {
       text-align: left;
       margin-bottom: 10px;
+
+      @media screen and (min-width: 960px) {
+        @include font(20px, 600, 30px);
+      }
     }
   }
 
@@ -289,6 +367,15 @@
       @media screen and (min-width: 640px) {
         text-align: left;
       }
+
+      @media screen and (min-width: 960px) {
+        @include font(14px, 400, 22px);
+        margin: 0;
+
+        .section-left & {
+          text-align: right;
+        }
+      }
     }
 
     .card-features-bottom & {
@@ -298,6 +385,11 @@
 
       @media screen and (min-width: 480px) {
         @include font(12px, 400, 22px);
+      }
+
+      @media screen and (min-width: 960px) {
+        @include font(14px, 600, 26px);
+        letter-spacing: 1.4px;
       }
     }
 
@@ -311,6 +403,10 @@
       @media screen and (min-width: 640px) {
         margin-bottom: 28px;
       }
+
+      @media screen and (min-width: 960px) {
+        @include font(14px, 600, 20px);
+      }
     }
 
     .card-projects & {
@@ -321,10 +417,14 @@
       text-transform: uppercase;
       transform: rotate(-90deg) translate(-13px, 100%);;
       transform-origin: bottom left;
-      @include font(12px, 600, 16px);
+      @include font(12px, 400, 16px);
       letter-spacing: 6px;
       margin-bottom: 20px;
       width: max-content;
+
+      @media screen and (min-width: 960px) {
+        @include font(20px, 400, 1px);
+      }
     }
 
     .card-blog & {
@@ -338,6 +438,10 @@
   &-price {
     margin: 0;
     @include font(18px, 600, 26px);
+
+    @media screen and (min-width: 960px) {
+      @include font(27px, 600, 38px);
+    }
   }
 
   & .fancybox-thumbnail {
@@ -368,5 +472,11 @@
     border-radius: 18px;
     @include flex(center, stretch);
     @include spacing(5px);
+
+    @media screen and (min-width: 640px) {
+      padding: 17px;
+      border-radius: 27px;
+      @include spacing(10px);
+    }
   }
 }

@@ -32,6 +32,10 @@
     height: 100%;
     @include flex(center, center);
     flex-direction: column;
+
+    @media screen and (min-width: 960px) {
+      align-items: flex-start;
+    }
   }
 
   &-background {
@@ -46,6 +50,10 @@
 
   &-overlay {
     @include overlay(-2, $color-overlay, 0.6);
+
+    @media screen and (min-width: 960px) {
+      @include overlay(-2, $color-overlay, 0.3)
+    }
   }
 
   &-overlay-pic {
@@ -64,6 +72,11 @@
     text-align: center;
     color: $color-main;
 
+    @media screen and (min-width: 960px) {
+      align-items: flex-start;
+      max-width: 560px;
+    }
+
     .hero-title {
       @include font(28px, 600, 38px);
       margin-top: 0;
@@ -72,19 +85,21 @@
 
       @media screen and (min-width: 480px) {
         & {
-          @include font(32px, 300, 42px);
+          @include font(32px, 600, 42px);
         }
       }
 
       @media screen and (min-width: 640px) {
         & {
-          @include font(40px, 300, 60px);
+          @include font(40px, 600, 60px);
         }
       }
 
       @media screen and (min-width: 960px) {
         & {
-          @include font(60px, 300, 80px);
+          @include font(60px, 600, 80px);
+          text-align: left;
+          letter-spacing: 2px;
         }
       }
     }

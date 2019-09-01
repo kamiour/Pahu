@@ -15,6 +15,10 @@
   &-right {
     @include flex(flex-end, stretch);
     @include spacing(6px);
+
+    @media screen and (min-width: 960px) {
+      @include spacing(11px);
+    }
   }
 
   &-button {
@@ -29,6 +33,12 @@
         max-width: 22px;
         object-fit: contain;
         transition-duration: 0.2s;
+
+        @media screen and (min-width: 960px) {
+          .card-collections & {
+            max-height: 20px;
+          }
+        }
       }
     }
 
@@ -45,6 +55,10 @@
       padding: 0;
       max-width: 140px;
       @include flex(left, center);
+
+      @media screen and (min-width: 960px) {
+        max-width: 190px;
+      }
     }
   }
 

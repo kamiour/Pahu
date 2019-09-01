@@ -1,5 +1,5 @@
 .button {
-  @include flex(center, center);
+  @include flex(center, flex-end);
   @include button($color-main, $color-secondary, 15px, 20px, none, 0, uppercase);
   @include font(14px, 600, 1);
   border: none;
@@ -10,13 +10,28 @@
     @include button($color-main, darken($color-secondary, 10%), 15px, 20px, none, 0, uppercase);
   }
 
+  @media screen and (min-width: 960px) {
+    @include button($color-main, $color-secondary, 20px, 25px, none, 0, uppercase);
+
+    &:hover {
+      @include button($color-main, darken($color-secondary, 10%), 20px, 25px, none, 0, uppercase);
+    }
+  }
+
+  
+
   &-wrap {
     @include flex(left, center);
     margin-top: 4px;
-    @media screen and (min-width: 480px) {   
+    padding-left: 10px;
+    @media screen and (min-width: 480px) {
       & {
         margin-top: 0;
       }
+    }
+
+    @media screen and (min-width: 960px) {
+      padding-left: 22px;
     }
   }
 }
@@ -46,5 +61,6 @@
 }
 
 .arrow {
-  margin-left: 10px;
+  margin-left: 5px;
+  @include font(18px, 600, 1);
 }

@@ -3,6 +3,11 @@
   padding-bottom: 5px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 
+  @media screen and (min-width: 960px) {
+    padding-top: 75px;
+    padding-bottom: 50px;
+  }
+
   &-wrap {
     height: 100%;
     @include flex(center, center);
@@ -15,6 +20,10 @@
     border-left: 2px solid $color-secondary;
     flex-grow: 1;
     margin-bottom: 40px;
+
+    @media screen and (min-width: 960px) {
+      margin-bottom: 60px;
+    }
   }
 
   &-body {
@@ -31,6 +40,12 @@
         max-width: 200px;
         @include flex(center, center);
         margin-bottom: 25px;
+
+        @media screen and (min-width: 960px) {
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 35px;
+        }
       }
     }
   }
@@ -39,8 +54,13 @@
     color: $color-secondary;
     text-transform: uppercase;
     margin-bottom: 10px;
-    @include font(14px, 400, 20px);
+    @include font(14px, 600, 20px);
     letter-spacing: 2px;
+
+    @media screen and (min-width: 960px) {
+      @include font(25px, 600, 35px);
+      margin-bottom: 20px;
+    }
   }
 
   &-subtitle {
@@ -48,6 +68,11 @@
     margin-bottom: 10px;
     @include font(14px, 400, 20px);
     margin-bottom: 10px;
+
+    @media screen and (min-width: 960px) {
+      @include font(30px, 400, 40px);
+      margin-bottom: 20px;
+    }
   }
 
   ul.contact-list {
@@ -58,18 +83,27 @@
 
     li {
       margin-bottom: 3px;
+      word-break: break-word;
     }
   }
 
   .contact-list-item {
     color: $color-reverse;
     @include font(12px, 400, 18px);
+
+    @media screen and (min-width: 960px) {
+      @include font(14px, 400, 24px);
+    }
   }
 
   .contact-link {
     color: $color-reverse;
     text-decoration: none;
     @include font(12px, 400, 18px);
+
+    @media screen and (min-width: 960px) {
+      @include font(14px, 400, 24px);
+    }
 
     &:hover {
       text-decoration: underline;
@@ -86,6 +120,10 @@
       color: $color-additional-light;
       @include font(12px, 400, 18px);
       margin-bottom: 3px;
+
+      @media screen and (min-width: 960px) {
+        @include font(14px, 400, 24px);
+      }
     }
   }
 
@@ -93,6 +131,10 @@
     color: $color-additional-light;
     @include font(12px, 400, 18px);
     margin: 0;
+
+    @media screen and (min-width: 960px) {
+      @include font(14px, 400, 24px);
+    }
   }
 
   .col-top .grid, .col-bottom .grid {

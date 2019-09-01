@@ -27,6 +27,10 @@
         padding: 15px;
       }
     }
+
+    @media screen and (min-width: 960px) {
+      @include font(14px, 400, 14px);
+    }
   
     &::placeholder {
       color: $color-additional-light;
@@ -34,7 +38,7 @@
   }
 
   .flip-icon ~ .form-style {
-    padding-right: 66px;
+    padding-right: 40px;
   }
 
   .form-icon {

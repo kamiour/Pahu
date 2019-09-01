@@ -33,4 +33,22 @@
       @include spacing(30px);
     }
   }
+
+  @media screen and (min-width: 960px) {
+    .section-features.section-top & {
+      @include spacing(0);
+    }
+
+    .section-designers & {
+      @include spacing(14px);
+    }
+
+    .section-blog & {
+      @include spacing(13px);
+    }
+
+    .footer & {
+      @include spacing(80px);
+    }
+  }
 }
