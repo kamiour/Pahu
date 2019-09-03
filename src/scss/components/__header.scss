@@ -22,22 +22,17 @@
   }
 
   &-button {
+    @include flex(center, center);
 
-    .header-icon {
-      margin: 0;
-      @include flex(center, center);
-      height: 100%;
+    .img {
+      max-height: 16px;
+      max-width: 26px;
+      object-fit: contain;
+      transition-duration: 0.2s;
 
-      .img {
-        max-height: 16px;
-        max-width: 22px;
-        object-fit: contain;
-        transition-duration: 0.2s;
-
-        @media screen and (min-width: 960px) {
-          .card-collections & {
-            max-height: 20px;
-          }
+      @media screen and (min-width: 960px) {
+        .card-collections & {
+          max-height: 20px;
         }
       }
     }

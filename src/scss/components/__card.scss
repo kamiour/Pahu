@@ -468,8 +468,8 @@
 
   .buttons-wrap {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 18px;
+    padding: 12px;
+    border-radius: 20px;
     @include flex(center, stretch);
     @include spacing(5px);
 
