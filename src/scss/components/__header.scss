@@ -25,8 +25,8 @@
     @include flex(center, center);
 
     .img {
-      max-height: 16px;
       width: 26px;
+      max-height: 16px;
       object-fit: contain;
       transition-duration: 0.2s;
 
